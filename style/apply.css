@@ -1,0 +1,43 @@
+body {
+    background: #F2F2F2;
+}
+.row {
+    display: flex;
+    padding: .34rem .2rem;
+    background: #FFFFFF;
+    margin-bottom: 1px;
+}
+.row p {
+    font-size: .32rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+.row p img {
+    width: .36rem;
+    height: auto;
+    margin: 0 .24rem 0 .05rem;
+}
+.row input {
+    flex: 1;
+    text-align: end;
+    border: none;
+    outline: none;
+    font-size: .28rem;
+    font-family: "microsoft yahei";
+}
+button {
+    display: block;
+    width: 92%;
+    margin: .8rem auto;
+    height: .82rem;
+    background: #9D3131;
+    color: #FFFFFF;
+    border: none;
+    border-radius: .1rem;
+    font-size: .3rem;
+    outline: none;
+}
+button:active {
+    opacity: 0.7;
+}

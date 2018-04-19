@@ -1,0 +1,99 @@
+body {
+    background: #f2f2f2;
+}
+
+.tips {
+    display: flex;
+    justify-content: space-between;
+    font-size: .28rem;
+    padding: .2rem;
+    color: #666;
+}
+
+.shift {
+    padding: .25rem .2rem;
+    background: #FFFFFF;
+    color: #333333;
+    font-size: .28rem;
+    margin-bottom: 1px;
+}
+.shift p {
+    display: block;
+    float: left;
+    white-space: nowrap;
+}
+.shift p a {
+    display: block;
+    float: left;
+}
+.shift p img {
+    float: left;
+    height: .28rem;
+    width: auto;
+    margin-right: .12rem;
+}
+.shift span {
+    display: block;
+    float: right;
+    color: #888;
+    font-size: .24rem;
+    font-weight: bold;
+}
+.shift .full {
+    color: red;
+    font-weight: 400;
+}
+.shift .nofull {
+    color: limegreen;
+    font-weight: 400;
+}
+
+.hang {
+    color: #555;
+    font-size: .26rem;
+    padding: .24rem .2rem;
+    border-bottom: solid 1px #f8f8f8;
+}
+.hang p{
+   float: left;
+}
+.hang span {
+    font-size: .24rem;
+    float: right;
+    color: #888;
+}
+.des{
+    text-align: justify;
+    padding-left: 5px;
+}
+.unfold{
+    display: none;
+}
+.last {
+    padding:.2rem;
+}
+.last button {
+    float: right;
+    width: 1.2rem;
+    height:.46rem;
+    font-size: .2rem;
+    margin-left: .3rem;
+    border-radius: .08rem;
+    border:none;
+    outline: none;
+    background:#d74e4e;
+    color:#fff;
+}
+.last .ed {
+    background:#22ae46;
+}
+.last .add {
+    background: #e9b23a;
+}
+
+.last button:active {
+    opacity:0.7;
+}
+.hidden{
+    display: none;
+}

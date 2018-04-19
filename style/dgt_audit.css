@@ -1,0 +1,124 @@
+.hengh {
+    display: flex;
+    align-items: center;
+    background: #FFFFFF;
+    padding: .15rem .2rem;
+    border-bottom: solid 1px #EEEEEE;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.hengh .xiala01 {
+    width: .16rem;
+    height: .26rem;
+    position: absolute;
+    right: .2rem;
+    top: .34rem;
+}
+.hengh .xiala02 {
+    width: .26rem;
+    height: .16rem;
+    position: absolute;
+    right: .2rem;
+    top: .39rem;
+}
+.hengh img {
+    width: .64rem;
+    height: .64rem;
+    margin: 0 .3rem 0 .1rem;
+
+}
+.hengh span {
+    display: block;
+    font-size: .2rem;
+    width: .66rem;
+    height: .32rem;
+    background: #fdc221;
+    color: #FFFFFF;
+    line-height: .32rem;
+    text-align: center;
+    border-radius: .08rem;
+    margin: 0 .2rem;
+}
+.hengh p {
+    font-size: .28rem;
+    color: #333;
+}
+.xinxi {
+    padding-top: .2rem;
+    background: #F8F8F8;
+    display: none;
+}
+.xinxi p {
+    font-size: .24rem;
+    color: #999;
+    padding: 0 .2rem;
+    line-height: .4rem;
+    letter-spacing: 1px;
+}
+.xinxi p span {
+    color: #666666;
+}
+.xinxi dl {
+    height: .6rem;
+    padding: 0 .2rem;
+    font-size: .24rem;
+    color: #666666;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f8f8f8;
+}
+.xinxi dl dd {
+    color: #999999;
+    display: flex;
+}
+.xinxi dl dd button {
+    width: .5rem;
+    height: .5rem;
+    border: solid 1px #DDDDDD;
+    background: #EEEEEE;
+    font-size: .24rem;
+    line-height: .5rem;
+    outline: none;
+}
+.xinxi dl dd button:active {
+    background-color: rgba(255,255,255,0.8 );
+}
+.xinxi dl dd input {
+    width: .7rem;
+    height: .5rem;
+    font-size: .24rem;
+    text-align: center;
+    border: solid 1px #DDDDDD;
+    border-left: none;
+    border-right: none;
+}
+.scbc {
+    background: #F8F8F8;
+    padding: .2rem;
+    display: flex;
+    justify-content: flex-end;
+}
+.scbc button {
+    width: 1.2rem;
+    height: .52rem;
+    margin-left: .3rem;
+    font-size: .24rem;
+    line-height: .52rem;
+    border-radius: .08rem;
+    border: solid 1px #CCCCCC;
+    background: none;
+    font-family: "微软雅黑";
+    color: #666666;
+}
+.scbc button:nth-child(1) {
+    background: #da3737;
+    color: #FFFFFF;
+    border: none;
+}
+.scbc button:nth-child(2) {
+    background: #3cce3c;
+    color: #FFFFFF;
+    border: none;
+}

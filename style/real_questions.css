@@ -1,0 +1,51 @@
+body {
+    background: #F2F2F2;
+}
+.ti {
+    background: #FFFFFF;
+    margin-bottom: 1px;
+    padding: .21rem .12rem;
+}
+.left {
+    float: left;
+}
+.left dl dt {
+    font-size: .28rem;
+    color: #333333;
+}
+.left dl dd {
+    font-size: .22rem;
+    color: #888888;
+    margin-top: .16rem;
+    white-space: nowrap;
+}
+.left dl dd p {
+    margin-right: .25rem;
+    float: left;
+}
+.left dl dd p span {
+    float: left;
+}
+.left dl dd p img {
+    float: left;
+    height: .24rem;
+    width: auto;
+    margin: .01rem .04rem 0;
+}
+.right {
+    float: right;
+}
+.right a {
+    font-size: .2rem;
+   float: left;
+    color: #9d2828;
+    padding: .08rem .01rem;
+    border-radius: .08rem;
+    margin: .17rem 0 0 .22rem;
+}
+.right img {
+    float: left;
+    height: .2rem;
+    width: auto;
+    margin-right: .15rem;
+}

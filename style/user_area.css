@@ -1,0 +1,18 @@
+#main{
+    margin-top: 20px;
+    width:100%;
+    min-height:300px;
+}
+#tb_data{
+    width:96%;
+    margin:1px auto;
+
+}
+.t{
+    height: 20px;
+}
+.c{
+    height: 20px;
+    text-align: right;
+
+}

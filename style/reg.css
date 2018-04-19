@@ -1,0 +1,112 @@
+body {
+    background: #f2f2f2;
+}
+
+.introduction h1 {
+    background: #FFFFff;
+    font-weight: 700;
+    font-size: .28rem;
+    color: #333333;
+    padding: .2rem .25rem;
+    border-bottom: solid 1px #F2F2F2;
+}
+.introduction p {
+    background: #FFFFff;
+    font-size: .3rem;
+    color: #666666;
+    padding: .15rem .25rem .3rem;
+    text-align: justify;
+    letter-spacing: .04rem;
+    border-bottom: .16rem solid #F2F2F2;
+}
+
+.row {
+    padding: .3rem .2rem;
+    background: #fff;
+    margin-bottom: 1px;
+}
+.row p {
+    font-size: .28rem;
+    color: #333333;
+    float: left;
+}
+.row p img {
+    float: left;
+    width: .28rem;
+    height: auto;
+    margin: .02rem .24rem 0 .05rem;
+}
+.row input {
+    width: 70%;
+    float: right;
+    text-align: end;
+    border: none;
+    outline: none;
+    font-size: .24rem;
+    color: #666666;
+}
+.sub{
+    display: block;
+    width: 92%;
+    margin: 0 auto .8rem;
+    height: .82rem;
+    background: #9D3131;
+    color: #FFFFff;
+    border: none;
+    border-radius: .1rem;
+    font-size: .3rem;
+    outline: none;
+}
+.sub:active{
+    opacity: 0.7;
+}
+
+
+.row1 {
+    background: #FFFFff;
+}
+.row1 textarea {
+    padding: 0 .2rem 0 1.4rem;
+    float: right;
+    width: 100%;
+    border: none;
+    resize: none;
+    color: #666666;
+    font-size: .28rem;
+    margin-bottom: 1rem;
+}
+
+input[type=date]::-webkit-inner-spin-button { visibility: hidden;}
+input[type="date"]::-webkit-calendar-picker-indicator {display: none;}
+input[type="date"]::-webkit-clear-button{display:none;}
+.row2 {
+    padding: .3rem .2rem;
+}
+.row2 input {
+    float: right;
+    padding: 0 .4rem;
+    color: #888888;
+    background: none;
+    appearance:none;
+    font-size: .28rem;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    text-align: right;
+    direction: rtl;
+    background: url(../img/rili.png) no-repeat center right;
+    background-size: .36rem .32rem;
+}
+
+.row3 select {
+    display: block;
+    float: right;
+    appearance:none;
+    font-size: .24rem;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    direction: rtl;
+    border: none;
+    color: #888;
+    background: none;
+    outline: none;
+}

@@ -1,0 +1,51 @@
+.bt dl dt {
+	font-size: 19px;
+	color: #333333;
+	margin: 10px 12px 5px;
+}
+.bt dl dd {
+	font-size: 14px;
+	color: #999999;
+	margin: 0 12px;
+}
+.bt dl dd a {
+	color: #3788E4;
+}
+.box {
+	text-align: center;
+}
+.box_01 {
+	font-size: 14px;
+	line-height: 180px;
+	color: #666;
+	height: 180px;
+	width: 320px;
+	margin: -40px auto;
+	background: url(../img/bt_bg.png) no-repeat center;
+	background-size: 100% 100%;
+}
+.content {
+	padding: 0 12px;
+}
+.content dt {
+	font-size: 15px;
+	color: #333333;
+	line-height: 32px;
+}
+.content dd {
+	font-size: 15px;
+	color: #666666;
+	line-height: 32px;
+	text-align: justify;
+}
+.content dd span {
+	color: #333333;
+}
+.tip {
+	font-size: 14px;
+	color: #3788E4;
+	line-height: 26px;
+}
+.end {
+	margin-top: 25px;
+}

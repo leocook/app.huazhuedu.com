@@ -1,0 +1,306 @@
+* {
+    text-shadow: 1px 1px 1px #FFFFFF;
+}
+body {
+    background: #CCCCCC;
+}
+.container {
+    max-width: 750px;
+    margin: auto;
+    background: #CCCCCC;
+    box-shadow: 0 0 8px #aaaaaa;
+}
+.clearfix {
+    clear: both;
+}
+.head {
+    height: .88rem;
+    line-height: .88rem;
+    font-size: .32rem;
+    text-align: center;
+    font-weight: 700;
+    text-shadow: 1px 1px 1px #FFFFFF;
+}
+.screen {
+    height: 200px;
+    width: 97%;
+    margin: auto;
+    background: #4bbaf4;
+    border: solid 3px #555;
+    box-shadow: 0 0 6px #FFFFFF;
+}
+.screen img {
+    width: 100px;
+    height: auto;
+    margin: 75px auto 0;
+}
+.light {
+    border-bottom: solid 1px #555555;
+    padding: .3rem 0;
+    box-shadow: 0 1px 2px #FFFFFF;
+}
+
+/*开关*/
+.light .left {
+    width: 22%;
+    float: left;
+    color: #333333;
+}
+.light .left dl {
+    width: 50%;
+    float: left;
+    text-align: center;
+    font-size: .2rem;
+}
+.light .left dl dd img {
+    width: .12rem;
+    height: auto;
+    margin: .12rem auto 0;
+}
+.switch{
+    font-size: .2rem;
+    text-align: center;
+}
+.switch img {
+    width: .8rem;
+    height: auto;
+    margin: .26rem auto;
+}
+.light .right {
+    width: 77%;
+    float: left;
+    color: #333333;
+}
+.light .right img {
+    width: .12rem;
+    height: auto;
+}
+.light .right dl{
+    padding: .08rem 0;
+    font-size: .2rem;
+    display: block;
+    width: 2.8rem;
+    margin: auto;
+    border: solid 1px #555;
+    border-radius: .06rem;
+}
+.light .right dl span {
+    float: left;
+}
+.light .right dl span img {
+    float: left;
+    margin: .1rem .14rem 0 .5rem;
+}
+
+.light .right dt{
+    display: block;
+    font-size: .2rem;
+    margin: .26rem auto 0;
+}
+.light .right dt span {
+    float: left;
+}
+.light .right dt span img {
+    float: left;
+    margin: .1rem .14rem 0 .5rem;
+}
+
+
+
+/*操作面板*/
+.f-btn {
+    padding: .35rem .33rem .2rem;
+}
+.f-btn img{
+    width: .84rem;
+    height: auto;
+    float: left;
+    margin: 0 .15rem;
+}
+.btn {
+    padding-bottom: .15rem;
+    border-bottom: solid 1px #555555;
+}
+.btn-left {
+    width: 84%;
+    float: left;
+}
+.btn-right {
+    width: 16%;
+    float: right;
+}
+.btn-right img {
+    width: .87rem;
+    height: auto;
+    margin: 0 0 .25rem .11rem;
+}
+
+.numb-btn {
+    margin-bottom: .2rem;
+}
+.numb-btn img{
+    width: .84rem;
+    height: auto;
+    float: left;
+    margin-left: .2rem;
+}
+
+
+/*开关+指示灯*/
+.third {
+    border-top: solid 1px #EEEEEE;
+}
+.third .left {
+    width: 37%;
+    float: left;
+}
+.third .right {
+    width: 21%;
+    float: left;
+    border-left: solid 1px #555555;
+}
+
+.third .left .tips dl {
+    font-size: .2rem;
+    display: block;
+    margin: auto;
+    padding: .13rem 0;
+    border-bottom: solid 1px #555555;
+}
+.third .left .tips dl span {
+    float: left;
+}
+.third .left .tips dl span img {
+    height: .12rem;
+    width: auto;
+    float: left;
+    margin: .1rem .14rem 0 .35rem;
+}
+.third .left .tips dl span:nth-child(2) img {
+    margin-left: .75rem;
+}
+.kaiguan {
+    width: 50%;
+    float: left;
+    color: #333333;
+    padding: .2rem 0 .15rem;
+}
+.kaiguan dl {
+    width: 50%;
+    float: left;
+    text-align: center;
+    font-size: .2rem;
+}
+.kaiguan dl dd img {
+    width: .12rem;
+    height: auto;
+    margin: .12rem auto 0;
+}
+.third .right p {
+    font-size: .24rem;
+    margin: .17rem 0;
+    text-align: center;
+}
+.third .right span {
+    display: block;
+    width: 80%;
+    margin: 0 auto .2rem;
+    border: dashed 1px #666666;
+    padding: .13rem;
+}
+
+.third .right dl {
+    font-size: .2rem;
+    margin-top: .17rem;
+}
+.third .right dl img {
+    width: .12rem;
+    height: auto;
+    float: left;
+    margin: .08rem .3rem 0;
+}
+.third .right .start-end img {
+    width: .5rem;
+    height: auto;
+    float: left;
+    margin: .2rem 0 .2rem .2rem;
+}
+.third {
+    border-bottom: solid 1px #555555;
+}
+
+
+
+.fouth {
+    border-top: solid 1px #EEEEEE;
+    border-bottom: solid 1px #555555;
+}
+.fouth .left {
+    width: 24%;
+    float: left;
+    padding: .2rem 0;
+}
+.fouth .right {
+    width: 38%;
+    border-left: solid 1px #555555;
+    float: left;
+}
+.fouth .left .logo img {
+    width: 1.1rem;
+    height: auto;
+    margin: 0 0 .4rem .4rem;
+}
+.fouth .left dl {
+    font-size: .2rem;
+    margin: .1rem 0;
+}
+.fouth .left dl img {
+    width: .12rem;
+    float: left;
+    margin: .09rem .12rem 0 .82rem;
+}
+.fouth .left p {
+    font-size: .2rem;
+    padding: .3rem 0 0 .66rem;
+}
+.fouth .right dl {
+    border: solid 1px #666666;
+    border-radius: .06rem;
+    width: 93%;
+    margin: .24rem auto;
+}
+.fouth .right dl span {
+    display: block;
+    float: left;
+    font-size: .18rem;
+    margin: 0 .06rem
+}
+.fouth .right dl span:nth-child(4) {
+    margin-left: .32rem;
+}
+.fouth .right p {
+    margin-bottom: .22rem;
+}
+.fouth .right p span {
+    display: block;
+    float: left;
+    font-size: .2rem;
+}
+.fouth .right p span img {
+    width: .12rem;
+    height: auto;
+    margin: .07rem .24rem;
+
+}
+.fouth .right p .btnn img {
+    width: .24rem;
+    height: auto;
+    margin: .01rem .7rem .04rem .04rem;
+}
+
+.foot {
+    font-size: .2rem;
+    text-align: center;
+    padding: .2rem;
+    border-top: solid 1px #EEEEEE;
+}

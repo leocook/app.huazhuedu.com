@@ -1,0 +1,89 @@
+body {
+	background: #FFFFFF;
+}
+.tab {
+	background: #FFFFFF;
+	font-size: .32rem;
+	color: #333333;
+	box-shadow: 0 .02rem .1rem #999999;
+}
+.tab span {
+	width: 50%;
+	float: left;
+	color: #333;
+	text-align: center;
+	padding: .2rem 0;
+	border-bottom: solid 2px #FFFFFF;
+
+}
+.tab span:hover {
+	color: #9D3131;
+	border-bottom: solid 2px #9D3131;
+}
+#xiangqing {
+	padding: 0 .4rem;
+}
+.pianbt {
+	font-size: .32rem;
+	color: #333333;
+	text-align: center;
+	margin: .8rem auto .5rem;
+}
+.zhang {
+	border-bottom: dashed 1px #DDDDDD;
+	padding: .3rem 0;
+}
+.zhangbt {
+	font-size: .28rem;
+	color: #666666;
+}
+.zhangbt img {
+	float: left;
+	width: .3rem;
+	height: .3rem;
+	margin: .03rem .2rem 0 0;
+}
+.jie {
+	padding-left: .46rem;
+	font-size: .24rem;
+	color: #999999;
+	margin-top: .3rem;
+}
+.jie img {
+	float: left;
+	width: .14rem;
+	height: .16rem;
+	margin: .08rem .15rem 0 0;
+}
+
+#xqing {
+	padding: .5rem .4rem;
+}
+.xqbt {
+	font-size: .28rem;
+	color: #333333;
+	margin-top: .4rem;
+}
+.xqbt img {
+	float: left;
+	width: .3rem;
+	height: .3rem;
+	margin: .01rem .2rem 0 0;
+}
+.xqcont p {
+	font-size: .24rem;
+	color: #666666;
+	margin-top: .2rem;
+	line-height: .5rem;
+	letter-spacing: 1px;
+	margin-left: .5rem;
+}
+
+
+.secs {
+	display: none;
+}
+.tmp{
+	display: block;
+	min-height: 60px;
+}

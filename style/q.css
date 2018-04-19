@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1 {
+    font-weight: 400;
+    font-size: 14px;
+}
+body {
+    font-size: 14px;
+    color: #333333;
+    background: #EEEEEE;
+}
+.top {
+    height: 48px;
+    background: #9D3131;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.top .tubiao {
+    width: 100%;
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 15px;
+}
+.top .tubiao img {
+    height: 22px;
+    width: auto;
+}
+.top p {
+    width: 100%;
+    font-size: 18px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 48px;
+}
+.banner {
+    width: 100%;
+    padding: 15px 10px;
+    background: #9D3131;
+}
+.banner img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.qianyan {
+    margin: 16px 10px;
+}
+.qianyan p {
+    line-height: 24px;
+}
+.ti {
+    margin: 10px;
+    border: solid 1px #CCCCCC;
+    border-radius: 8px;
+    padding: 12px 10px;
+    background: #FFFFFF;
+}
+.ti h1 {
+    padding-bottom: 10px;
+    border-bottom: solid 1px #DDDDDD;
+}
+.ti p {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+}
+.ti p input {
+    width: 15px;
+    height: 15px;
+    margin-right: 12px;
+}
+.inform {
+    padding-top: 10px;
+    margin: 30px 10px;
+    height: 260px;
+    background: url(../img/informbg.png) no-repeat;
+    background-size: 100% 100%;
+}
+.hag {
+    display: flex;
+    justify-content: flex-end;
+    width: 240px;
+    margin: 14px auto;
+}
+.hag input {
+    flex: 1;
+    background: none;
+    border: none;
+    border-bottom: solid 1px #BBBBBB;
+    outline: none;
+}
+.hag button {
+    width: 120px;
+    height: 30px;
+    background: #e03e3e;
+    border: none;
+    border-radius: 4px;
+    color: #FFFFFF;
+}
+.hag button:active {
+    background-color: rgba(224,62,62,0.8);
+}

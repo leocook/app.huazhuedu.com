@@ -1,0 +1,114 @@
+body {
+    background: #F4F4F4;
+}
+.ban {
+    background: #FFFFFF;
+    padding: .28rem .16rem;
+    margin-bottom: 1px;
+}
+.ban p {
+    font-size: .28rem;
+    color: #333333;
+    float: left;
+}
+.ban p img {
+    float: left;
+    height: .28rem;
+    width: auto;
+    margin-right: .15rem;
+}
+.ban span {
+    float: right;
+    font-size: .24rem;
+    color: #777;
+}
+.status {
+    background: #f1f5ff;
+    font-size: .26rem;
+    color: #666666;
+    padding: .26rem .22rem;
+    margin-bottom: 1px;
+}
+.status p {
+   float: left;
+}
+.status span {
+    float: right;
+}
+.status p img {
+    float: left;
+    height: .24rem;
+    width: auto;
+    margin-right: .12rem;
+}
+.person {
+    background: #FAFAFA;
+    padding: .28rem .24rem;
+    font-size: .26rem;
+    color: #333;
+    margin-bottom: 1px;
+}
+.person span {
+    float: right;
+    font-weight: bold;
+}
+.person p {
+    float: left;
+}
+
+.inform {
+    background: #efefef;
+    padding: .28rem .24rem;
+    margin-bottom: 1px;
+    font-size: .26rem;
+    color: #555;
+}
+.inform p {
+    float: left;
+}
+.inform span {
+    float: right;
+}
+.btn {
+    width: 100%;
+    float: right;
+    background: #efefef;
+    padding: .22rem .2rem;
+    margin-bottom: 1px;
+}
+.btn button {
+    display: block;
+    margin-left: .3rem;
+    float: right;
+    width: 1.2rem;
+    height: .5rem;
+    border: none;
+    border-radius: .06rem;
+    color: #ffffff;
+    font-size: .24rem;
+    outline: none;
+    background: #22ae46;
+}
+.btn select {
+    display: block;
+    float: right;
+    width: 1.2rem;
+    height: .5rem;
+    margin-left: .3rem;
+    border: none;
+    border-radius: .06rem;
+    color: #FFFFff;
+    font-size: .24rem;
+    outline: none;
+    padding-left: .1rem;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance:none;
+    background: #d74e4e;
+}
+
+
+
+.hidden{
+    display: none;
+}

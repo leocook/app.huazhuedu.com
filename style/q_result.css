@@ -1,0 +1,8 @@
+* {margin: 0;padding: 0;box-sizing: border-box;}
+body {font-size: 14px;color: #333;}
+.hui {width: 100%;margin-top: 20vh;}
+.huizang{margin-top: 40px;}
+.huizang img{width: 120px;height: auto;margin: auto;display: block;}
+.sucess {text-align: center;}
+.sucess dl dt {font-size: 18px;color: #333;margin: 10px 0;}
+.sucess dl dd {color: #999;}

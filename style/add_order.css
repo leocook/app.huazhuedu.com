@@ -1,0 +1,182 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	font-family: "微软雅黑";
+	background: #eee;
+}
+ul,ol {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	color: #666666;
+}
+img {
+	border: none;
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.search {
+	padding: .12rem .2rem;
+	margin: .2rem .3rem;
+	background: #e2e2e2;
+	border-radius: 2rem;
+}
+.search img {
+	float: right;
+	width: 5%;
+	height: 4%;
+}
+.search input {
+	width: 94%;
+	float: left;
+	font-family: "微软雅黑";
+	font-size: .28rem;
+	background: none;
+	border: none;
+	border-radius: 1rem;
+	outline: none;
+	text-indent: .2rem;
+}
+
+/*课程*/
+.kecheng {
+	background: #FFFFFF;
+	margin: 0 .3rem;
+	/*margin-top: -.15rem;*/
+}
+.kecheng .bt {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	padding: .2rem .2rem .15rem;
+	position: relative;
+	top: 0;
+	left: 0;
+}
+.kecheng .bt img {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: .50rem;
+	height: .36rem;
+}
+.kecheng .bt p {
+	font-size: .24rem;
+	color: #333333;
+}
+.kecheng .bt span {
+	font-size: .20rem;
+	color: #aaa;
+}
+.kecheng .cont {
+	display: flex;
+	position: relative;
+	top: 0;
+	left: 0;
+}
+.kecheng .cont .guoqi {
+	position: absolute;
+	top: .2rem;
+	right: 0;
+	width: 1rem;
+	height: .75rem;
+}
+.kecheng .cont img {
+	width: 1.69rem;
+	height: 1.16rem;
+	margin: 0 .2rem;
+}
+.kecheng .cont p {
+	font-size: .20rem;
+	color: #666666;
+	line-height: .36rem;
+}
+.kecheng .cont  .ming {
+	font-size: .26rem;
+	margin-bottom: .15rem;
+}
+.riqi {
+	margin-top: .4rem;
+}
+.kecheng .cont .time {
+	color: #f00;
+}
+.chu span{
+	display: block;
+	display: flex;
+	justify-content: flex-end;
+	font-size: .20rem;
+	color: #999999;
+	align-items: center;
+	margin: .15rem .2rem;
+	padding: .1rem 0;
+	border-top: solid 1px #DDDDDD;
+}
+.chu span img {
+	width: .22rem;
+	height: .22rem;
+	margin-right: .06rem;
+}
+
+.tianjia {
+	background: #FFFFFF;
+	margin: 0 .3rem 1rem;
+	padding: .7rem .3rem .4rem;
+	/*margin-top: -.16rem;*/
+}
+.form {
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+.form input {
+	height: .6rem;
+	width: 100%;
+	border-radius: .08rem;
+	border: solid 1px #ccc;
+	outline: none;
+	text-indent: .1rem;
+	font-size: .24rem;
+	margin-bottom: .3rem;
+}
+.form h1 {
+	display: block;
+	height: .6rem;
+	width: 1.7rem;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.form h1 img {
+	width: 100%;
+	height: 100%;
+	border-radius: 0 .08rem .08rem 0;
+}
+#btn button {
+	height: .6rem;
+	border-radius: .08rem;
+	display: block;
+	width: 100%;
+	background: #9D3131;
+	font-size: .24rem;
+	color: #FFFFFF;
+	font-family: "微软雅黑";
+	border: none;
+	outline: none;
+	text-indent: 0;
+	margin-top: .2rem;
+}
+#btn button:active {
+	opacity: 0.8;
+}
+

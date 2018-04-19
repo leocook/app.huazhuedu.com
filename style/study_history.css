@@ -1,0 +1,85 @@
+body {
+	background: #F2F4F6;
+	font-size: 14px;
+}
+#kuaidi {
+	background: #FFFFFF;
+	padding: 14px;
+	margin-bottom: 10px;
+	display: flex;
+	align-items: center;
+}
+#kuaidi h1 {
+	font-size: 15px;
+	margin-bottom: 6px;
+}
+
+#kuaidi img {
+	height: 12px;
+	width: 12px;
+}
+#kuaidi span:nth-child(1) {
+	margin-right: 15px;
+}
+.wuliu {
+	background: #FFFFFF;
+	display: flex;
+	padding: 0 14px;
+}
+.wuliu h1 {
+	position: relative;
+	top: 22px;
+	width: 2px;
+	background: #f2f4f6;
+	margin-right: 20px;
+}
+.wuliu h1 p {
+	margin-right: 14px;
+	width: 12px;
+	height: 12px;
+	background: #CCCCCC;
+	border-radius: 100%;
+	border: solid 2px #EEEEEE;
+	position: absolute;
+	top: 0;
+	left: -5px;
+}
+.wuliu .first p {
+	background: #D83232;
+	border-radius: 100%;
+	border: solid 2px #fd8c8c;
+}
+.wuliu h1 a {
+	width: 4px;
+	height: 30px;
+	background: blue;
+}
+.wuliu dl {
+	color: #888;
+	padding: 10px 0;
+	flex: 1;
+	border-bottom: solid 1px #EEEEEE;
+	margin-top: 8px;
+}
+.wuliu dl dt {
+	font-size: 14px;
+	margin-bottom: 8px;
+}
+.wuliu dl span {
+	color: #D83232;
+}
+
+
+
+.wuliu h2 {
+	width: 46px;
+	font-size: 16px;
+	font-weight: 400;
+	margin: 18px 12px 0 0;
+	color: #666666;
+	text-align: center;
+}
+.wuliu h2 p:nth-child(2) {
+	font-size: 12px;
+	color: #888888;
+}

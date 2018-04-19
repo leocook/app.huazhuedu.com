@@ -1,0 +1,84 @@
+body {
+	background: #F2F2F2;
+}
+
+.box {
+	margin-bottom: .15rem;
+}
+.bt {
+	background: #FFFFFF;
+	padding: .16rem 0 .16rem .2rem;
+	font-size: .28rem;
+	color: #333333;
+	font-weight: 900;
+	margin-bottom: 1px;
+}
+.bt img {
+	float: left;
+	height: .26rem;
+	width: auto;
+	margin-right: .15rem;
+	margin-top: .03rem;
+}
+.bt p {
+	float: left;
+}
+
+.average {
+	width: 50%;
+	float: left;
+	background: #fff;
+	padding: .42rem .72rem;
+}
+.row_2 .average:nth-child(2) {
+	border-left: solid 1px #f2f2f2;
+}
+.row_2 .average dl {
+	float: left;
+}
+.row_2 .average dl dt {
+	font-size: .24rem;
+	color: #333333;
+}
+.row_2 .average dl dd {
+	font-size: .22rem;
+	color: #888888;
+}
+.row_2 .average img {
+	height: .56rem;
+	width: auto;
+	float: right;
+}
+
+
+.row_3 {
+	background: #FFFFFF;
+	padding: .34rem 0;
+}
+.row_3 dl {
+	width: 33%;
+	float: left;
+	text-align: center;
+	font-size: .24rem;
+}
+.row_3 dl img {
+	height: .56rem;
+	width: auto;
+	margin: 0 auto .16rem;
+}
+
+.row_4 {
+	background: #FFFFFF;
+	padding: .34rem 0;
+}
+.row_4 dl {
+	width: 25%;
+	float: left;
+	text-align: center;
+	font-size: .24rem;
+}
+.row_4 dl img {
+	height: .56rem;
+	width: auto;
+	margin: 0 auto .16rem;
+}

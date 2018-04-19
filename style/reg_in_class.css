@@ -1,0 +1,117 @@
+body {
+	background: #F2F2F2;
+}
+
+.row {
+	background: #FFFFFF;
+	padding: .26rem .2rem;
+	margin-bottom: 1px;
+}
+.row .right {
+	float: right;
+	font-size: .28rem;
+	color: #666;
+	display: flex;
+	align-items: center;
+}
+.row .right label {
+	font-size: .24rem;
+	float: left;
+}
+.row .right input {
+	float: left;
+	display: block;
+	height: .3rem;
+	width: .3rem;
+	margin: 0 0 0 .13rem;
+}
+.row .right label{
+	margin-left: .32rem;
+}
+.row span {
+	display: block;
+	float: left;
+	font-size: .28rem;
+	color: #333;
+}
+.row input {
+	background: none;
+	border: none;
+	outline: none;
+	text-align: end;
+	color: #666;
+	font-size: .28rem;
+}
+
+input[type=date]::-webkit-inner-spin-button { visibility: hidden;}
+input[type="date"]::-webkit-calendar-picker-indicator {display: none;}
+input[type="date"]::-webkit-clear-button{display:none;}
+
+.row2 {
+	padding: .3rem .2rem;
+}
+.row2 input {
+	float: right;
+	height: .32rem;
+	width: 70%;
+	padding: 0 .4rem;
+	color: #888888;
+	background: none;
+	appearance:none;
+	font-size: .28rem;
+	-moz-appearance:none;
+	-webkit-appearance:none;
+	text-align: right;
+	direction: rtl;
+	background: url(../img/rili.png) no-repeat center right;
+	background-size: .36rem .32rem;
+}
+
+.row select {
+	flex: 1;
+	border: none;
+	outline: none;
+	direction: rtl;
+	font-size: .28rem;
+	background: none;
+	appearance:none;
+	color: #666;
+	-moz-appearance:none;
+	-webkit-appearance:none;
+}
+.row select option {
+	text-align: end;
+	direction: ltr;
+}
+button {
+	display: block;
+	width: 92%;
+	margin: .5rem auto 1rem;
+	height: .8rem;
+	border: none;
+	outline: none;
+	border-radius: .1rem;
+	background: #9D3131;
+	color: #FFFFFF;
+	font-size: .28rem;
+}
+button:active {
+	opacity: 0.8;
+}
+
+.row3 span {
+	float: left;
+}
+.row3 select {
+	display: block;
+	float: right;
+	appearance:none;
+	font-size: .28rem;
+	-moz-appearance:none;
+	-webkit-appearance:none;
+	direction: rtl;
+	border: none;
+	color: #888;
+	background: none;
+	outline: none;
+}

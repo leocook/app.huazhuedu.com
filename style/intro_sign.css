@@ -1,0 +1,217 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	font-family: "微软雅黑";
+}
+ul,ol {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	color: #666666;
+}
+img {
+	border: none;
+	width: 100%;
+	height: auto;
+	display: block;	
+}
+.bt {
+	margin: 1.1rem 0 .3rem 0;
+}
+.bt p {
+	text-align: center;
+	font-size: .36rem;
+	color: #333;
+	margin: 0 .15rem;
+}
+.form {
+	border: solid 1px #999999;
+	border-radius: .08rem;
+	height: .8rem;
+	margin: 0 .7rem .15rem;
+	position: relative;
+	top: 0;
+	left: 0;
+}
+.form img {
+	float: left;
+	width: .25rem;
+	height: .3rem;
+	margin: .21rem .2rem 0;
+}
+.form input {
+	width: 85%;
+	float: left;
+	font-size: .28rem;
+	font-family: "微软雅黑";
+	color: #999;
+	height: 100%;
+	border: none;
+	outline: none;
+	background: none;
+}
+.form span {
+	font-size: .28rem;
+	color: #999999;
+	display: block;
+	border-left: solid 1px #999999;
+	padding: 0 .3rem;
+	position: absolute;
+	top: 0;
+	right: 0;
+	line-height: .4rem;
+	margin: .2rem 0;
+}
+#button {
+	border: none;
+	background: #9d3131;
+	margin-top: .3rem;
+}
+#button:active{
+	opacity: 0.8;
+}
+#button input {
+	width: 100%;
+	color: #FFFFFF;
+}
+.tu {
+	padding: 0 .6rem;
+}
+
+.hang dl {
+	float: left;
+	width: 28%;
+	margin: 1%;
+	text-align: center;
+	color: #FFFFFF;
+	padding: .4rem .15rem .3rem;
+	border-radius: .1rem;
+}
+.hang dl:nth-child(1) {
+	margin-left: 6%;
+}
+.hang dl dt img {
+	height: .6rem;
+	width: auto;
+	margin: 0 auto .2rem;
+}
+.hang dl dt {
+	font-size: .24rem;
+	margin-bottom: .05rem;
+}
+.hang dl dd {
+	font-size: .20rem;
+}
+.content {
+	padding: 0 .5rem;
+}
+.content p {
+	font-size: .28rem;
+	color: #666666;
+	text-indent: .48rem;
+	letter-spacing: .02rem;
+	text-align: justify;
+}
+.jietu p {
+	width: 30%;
+	float: left;
+	padding: .2rem .06rem 0;
+}
+.jietu p img {
+	box-shadow: 0 .01rem .01rem .01rem #ddd ;
+}
+.jietu p:nth-child(1){
+	margin-left: 5%;
+}
+
+/*政策~要求*/
+.tiaoli {
+	margin: 0 .2rem;
+	padding: .6rem .3rem;
+	background: url(../img/zhizhang.png) no-repeat;
+	background-size: 100% 100%;
+	font-size: .28rem;
+}
+.tiaoli dl {
+	padding: 0 .5rem;
+}
+.tiaoli dl dt {
+	color: #333333;
+	margin-top: .6rem;
+}
+.tiaoli dl dd {
+	color: #666;
+	margin-top: .4rem;
+}
+.tiaoli img {
+	width: 1.9rem;
+	height: 1.09rem;
+	float: right;
+	margin: 0 .3rem .2rem 0;
+}
+.clearfix {
+	clear: both;
+}
+
+/*二维码*/
+.dibu {
+	padding: 0 .4rem .3rem .5rem;
+}
+.dibu dl {
+	float: left;
+	text-align: center;
+	margin-top: .6rem;
+}
+.dibu dl dt {
+	font-size: .3rem;
+	color: #333333;
+	border-bottom: dashed 1px #999;
+	padding-bottom: .1rem;
+}
+.dibu dl dd {
+	font-size: .24rem;
+	color: #999999;
+	padding-top: .1rem;
+}
+.dibu img {
+	display: block;
+	float: right;
+	width: 2.3rem;
+	height: 2.3rem;
+}
+.fenge {
+	padding:.2rem;
+	margin: .3rem 0 .1rem;
+}
+.fenge img {
+	float: left;
+	width: 4%;
+	height: 4%;
+	margin: 0 1%;
+}
+.fenge span {
+	float: left;
+	display: block;
+	height: 1px;
+	width: 47%;
+	background: #999;
+	margin-top: .15rem;
+}
+.errin{
+
+	border:1px solid darkred;
+
+}
+
+.sucin{
+
+	border:1px solid darkgreen;;
+
+}
