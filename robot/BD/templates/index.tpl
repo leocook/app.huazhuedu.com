@@ -15,7 +15,16 @@
         北大青鸟
     </div>
     <div class="screen">
-        <img src="img/bd.jpg"/>
+       <div class="screen_content">
+           <div class="screen_left" ></div>
+           <div class="screen_right" ></div>
+           <div class="clearfix" ></div>
+       </div>
+        <div class="screen_nav"></div>
+    </div>
+    <div style = 'display: none'>
+        <img src = 'img/start_img.jpg' id="start_img"/>
+        <img src = 'img/logo.png' id="logo_img"/>
     </div>
 
     <!--开关+指示灯-->

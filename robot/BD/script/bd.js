@@ -75,16 +75,9 @@ $(document).ready(function () {
 function Robot() {
     this.imgs = this._pre_load_img();
     this.data = this.Default;
-    this.w = this.get_width();
-    this.h = this.get_height();
-    this.ctx = this.get_ctx();
-    this.w_ratio = 0.75;
-    this.h_ratio = 0.92;
-    this.screen={
-        main:{x:0,y:0,w:this.w*this.w_ratio,h:this.h*this.h_ratio},
-        foot:{x:0,y:this.h*this.h_ratio,w:this.w,h:this.h*(1-this.h_ratio)},
-        right:{x:this.w*this.w_ratio,y:0,w:this.w*(1-this.w_ratio),h:this.h}
-    };
+    this.left = this.get_ctx('screen_left','c_left');
+    this.right = this.get_ctx('screen_right','c_right');
+    this.nav = this.get_ctx('screen_nav','c_nav');
 }
 //主机初始状态，在每次初
 
@@ -115,46 +108,80 @@ Robot.prototype._pre_load_img= function(){
 };
 
 Robot.prototype.draw_start_screen= function(){
-    var main_x =this.screen.main.x;
-    var main_y =this.screen.main.y;
-    var main_w =this.screen.main.w;
-    var main_h =this.screen.main.h;
-    var foot_x = this.screen.foot.x;
-    var foot_y = this.screen.foot.y;
-    var foot_w = this.screen.foot.w;
-    var foot_h = this.screen.foot.h;
     var start_img = new Image();
-    start_img.src = 'img/start_img.jpg';
-    this.ctx.drawImage(start_img,0,0,this.screen.main.w,this.screen.main.h);
-    var grd = this.create_gradient(foot_x,foot_y,0,this.h);
-    this.ctx.fillStyle = grd;
-    this.ctx.fillRect(foot_x,foot_y,foot_w,foot_h);
-
+    start_img.src = $('#start_img').attr('src');
+    this.left.ctx.drawImage(start_img,0,0,this.left.w,this.left.h);
+    this.nav.ctx.fillStyle = this.create_gradient(0,0,0,this.nav.h);
+    this.nav.ctx.fillRect(0,0,this.nav.w,this.nav.h);
+    this.right.ctx.fillStyle = '#019ae8';    //右
+    this.right.ctx.fillRect(0,0,this.right.w,this.right.h);
+    this.draw_logo();
+    this.draw_time();
+    this.draw_info_box();
 };
 
 Robot.prototype.create_gradient= function(x1,y1,x2,y2){
-    var grd=this.ctx.createLinearGradient(x1,y1,x2,y2);
-    grd.addColorStop(0,'#ffffff');
-    grd.addColorStop(1,"#000000");
+    var grd=this.nav.ctx.createLinearGradient(x1,y1,x2,y2);
+    grd.addColorStop(0,'#2caef1');
+    grd.addColorStop(0.5,"#54c5ff");
+    grd.addColorStop(1,'#2caef1');
     return grd;
-
 };
 
+Robot.prototype.draw_logo= function(){
+    var img = new Image();
+    img.src = $('#logo_img').attr('src');
+    var x = this.right.w*0.2;
+    var y = this.right.h*0.03;
+    this.right.ctx.drawImage(img,x,y,this.right.w*0.6,this.right.h*0.1);
+};
+Robot.prototype.draw_time= function(){
+    var d = new Date();
+    var date = d.Format("yyyy-MM-dd");
+    var time = d.Format("hh:mm:ss");
+    var max_width = this.right.ctx.measureText(date).width;
+    var x = (this.right.w-max_width)/2;
+    var y = this.right.h*0.9;
+    this.right.ctx.fillStyle='#fff';
+    this.right.ctx.font="12px";
+    this.right.ctx.fillText(date,x,y,max_width);
+    this.right.ctx.fillText(time,x,y+14,max_width);
+};
+
+Robot.prototype.draw_info_box= function(){
+    this.right.ctx.fillStyle='#bee8fd';
+    this.right.ctx.font="10px";
+    var w = this.right.w-8;
+    var h =this.right.h*0.66;
+    this.right.ctx.fillRect(4,this.right.h*0.16,w,h);
+    this.right.ctx.fillStyle='#000';
+    this.right.ctx.fillText('调试 : B01    67',8,this.right.h*0.16+15);
+    this.right.ctx.fillText('手动 : 允许',8,this.right.h*0.16+30);
+    this.right.ctx.fillText('自动 : 禁止',8,this.right.h*0.16+45);
+    this.right.ctx.fillStyle='#4ce3fe';
+    this.right.ctx.fillRect(4,this.right.h*0.16+50,w,38); //中间篮框 高40px
+    this.right.ctx.fillStyle='#000';
+    this.right.ctx.fillText('声光故障 : 000',8,this.right.h*0.16+65);
+    this.right.ctx.fillText('声光屏蔽 : 000',8,this.right.h*0.16+80);
+
+
+
+};
 
 
 Robot.prototype.Default ={
     key_1:0,key_2:0,key_3:0,
-    mul_1:0,mul_2:3,mul_3:7,
+    mul_1:0,mul_2:0,mul_3:0,
     bus_101:0,bus_102:0,bus_103:0,bus_104:0,bus_105:0,
-    bus_201:0,bus_202:0,bus_203:0,bus_204:0,bus_205:1,
-    /*lamp_s : {
+    bus_201:0,bus_202:0,bus_203:0,bus_204:0,bus_205:0,
+    lamp_s : {
         lamp_alarm:0,lamp_start:1,
         lamp_101:0,lamp_104:0,lamp_201:0,lamp_204:0,
         lamp_102:0,lamp_105:0,lamp_202:0,lamp_205:0,
         lamp_103:1,lamp_106:0,lamp_203:0,lamp_206:1,
         mul_lamp_run:0,mul_lamp_alarm:0,
         bus_lamp_run:1,bus_lamp_forb:0,bus_lamp_allow:0
-    }*/
+    }
 };
 
 Robot.prototype.init=function(){
@@ -178,6 +205,7 @@ Robot.prototype.init=function(){
                 break;
         }
     }
+    this.lamps_init(this.data.lamp_s);
     this.draw_start_screen();
 
 };
@@ -311,21 +339,43 @@ Robot.prototype.turn_lamp = function($ele,stat){
     $ele.attr('src',new_path);
 };
 
-Robot.prototype.get_width = function(){
-    return $(".screen").width();
+Robot.prototype.get_width = function(cls_name){
+    return $('.'+cls_name).width();
 };
-Robot.prototype.get_height = function(){
-    return $(".screen").height();
+
+Robot.prototype.get_height = function(cls_name){
+    return $('.'+cls_name).height();
 };
-Robot.prototype.get_ctx = function(){
-    $(".screen").html("<canvas id='can_top' width='" + this.w + "' height='" + this.h + "'/>");
-    var c = document.getElementById("can_top");
-    var ctx = c.getContext("2d");
-    ctx.fillStyle = "#fff";
-    ctx.font = "12px 微软雅黑";
-    ctx.strokeStyle = "#666";
-    return ctx;
+
+Robot.prototype.get_ctx = function(cls_name,canvas_name){
+    var ww,hh,w_,h_;
+    switch (canvas_name){
+        case 'c_left':
+            ww = this.get_width(cls_name);
+            hh = this.get_height(cls_name);
+            break;
+        case 'c_right':
+            ww = this.get_width(cls_name);
+            hh = this.get_height(cls_name);
+            break;
+        default:
+            ww = this.get_width(cls_name);
+            hh = this.get_height(cls_name)-5;
+            break;
+
+    }
+    w_ = Math.round(ww);
+    h_ = Math.round(hh);
+
+    var model = "<canvas id='c_name' width='c_wpx' height='c_hpx'/>";
+    $('.'+cls_name).html(model.replace('c_name',canvas_name).replace('c_w',w_).replace('c_h',h_));
+    var c = document.getElementById(canvas_name);
+    var ctx_ = c.getContext("2d");
+    ctx_.font = "12px 微软雅黑";
+    return {ctx:ctx_,w:w_,h:h_};
 };
+
+
 
 function audioAutoPlay() {
     var audio = document.getElementById('bg-music');
