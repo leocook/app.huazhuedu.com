@@ -23,7 +23,7 @@
         <div class="left">
             <dl>
                 <dt>禁止</dt>
-                <dd><img src="img/lamp_green_0.png" id="key_1_forb"/></dd>
+                <dd><img src="img/lamp_red_0.png" id="key_1_forb"/></dd>
             </dl>
             <dl>
                 <dt>允许</dt>
@@ -36,29 +36,29 @@
             </div>
         </div>
         <div class="right">
-            <dl><span><img src="img/lamp_green_0.png"/>火警</span>
-                <span><img src="img/lamp_green_0.png"/>启动</span>
+            <dl><span><img src="img/lamp_red_0.png" id ="lamp_alarm"/>火警</span>
+                <span><img src="img/lamp_green_0.png" id ="lamp_start"/>启动</span>
                 <div class="clearfix"></div>
             </dl>
             <dt>
-                <span><img src="img/lamp_green_0.png"/>监管报警</span>
-                <span><img src="img/lamp_green_0.png"/>备电工作</span>
-                <span><img src="img/lamp_green_0.png"/>故 障</span>
-                <span><img src="img/lamp_green_0.png"/>消 音</span>
+                <span><img src="img/lamp_green_0.png" id ="lamp_101"/>监管报警</span>
+                <span><img src="img/lamp_green_0.png" id ="lamp_104"/>备电工作</span>
+                <span><img src="img/lamp_yellow_0.png" id ="lamp_201"/>故 障</span>
+                <span><img src="img/lamp_red_0.png" id ="lamp_204"/>消 音</span>
                 <div class="clearfix"></div>
             </dt>
             <dt>
-                <span><img src="img/lamp_green_0.png"/>启动延时</span>
-                <span><img src="img/lamp_green_0.png"/>手动报警</span>
-                <span><img src="img/lamp_green_0.png"/>反 馈</span>
-                <span><img src="img/lamp_green_0.png"/>自 检</span>
+                <span><img src="img/lamp_green_0.png" id ="lamp_102"/>启动延时</span>
+                <span><img src="img/lamp_red_0.png" id ="lamp_105"/>手动报警</span>
+                <span><img src="img/lamp_red_0.png" id ="lamp_202"/>反 馈</span>
+                <span><img src="img/lamp_green_0.png" id ="lamp_205"/>自 检</span>
                 <div class="clearfix"></div>
             </dt>
             <dt>
-                <span><img src="img/lamp_green_0.png"/>主电运行</span>
-                <span><img src="img/lamp_green_0.png"/>系统故障</span>
-                <span><img src="img/lamp_green_0.png"/>屏 蔽</span>
-                <span><img src="img/lamp_green_0.png"/>运 行</span>
+                <span><img src="img/lamp_green_0.png" id ="lamp_103"/>主电运行</span>
+                <span><img src="img/lamp_green_0.png" id ="lamp_106"/>系统故障</span>
+                <span><img src="img/lamp_green_0.png" id ="lamp_203"/>屏 蔽</span>
+                <span><img src="img/lamp_green_0.png" id ="lamp_206"/>运 行</span>
                 <div class="clearfix"></div>
             </dt>
         </div>
@@ -129,15 +129,15 @@
         <div class="left">
             <div class="tips">
                 <dl>
-                    <span><img src="img/lamp_green_0.png"/>运行</span>
-                    <span><img src="img/lamp_green_0.png"/>火警</span>
+                    <span><img src="img/lamp_green_0.png" id="mul_lamp_run"/>运行</span>
+                    <span><img src="img/lamp_green_0.png" id="mul_lamp_alarm"/>火警</span>
                     <div class="clearfix"></div>
                 </dl>
             </div>
             <div class="kaiguan">
                 <dl>
                     <dt>禁止</dt>
-                    <dd><img src="img/lamp_green_0.png" id="key_2_forb"/></dd>
+                    <dd><img src="img/lamp_red_0.png" id="key_2_forb"/></dd>
                 </dl>
                 <dl>
                     <dt>允许</dt>
@@ -152,7 +152,7 @@
             <div class="kaiguan">
                 <dl>
                     <dt>禁止</dt>
-                    <dd><img src="img/lamp_green_0.png" id="key_3_forb"/></dd>
+                    <dd><img src="img/lamp_red_0.png" id="key_3_forb"/></dd>
                 </dl>
                 <dl>
                     <dt>允许</dt>
@@ -169,9 +169,9 @@
         <div class="right">
             <p>1</p>
             <span></span>
-            <dl><img src="img/lamp_green_0.png"/>启 动</dl>
-            <dl><img src="img/lamp_green_0.png"/>反 馈</dl>
-            <dl><img src="img/lamp_green_0.png"/>故 障</dl>
+            <dl><img src="img/lamp_green_0.png" id="mul_lamp_101"/>启 动</dl>
+            <dl><img src="img/lamp_green_0.png" id="mul_lamp_102"/>反 馈</dl>
+            <dl><img src="img/lamp_green_0.png" id="mul_lamp_103"/>故 障</dl>
             <div class="start-end">
                 <img src="img/btn_start_0.png" class="bns" id = "start_1"/>
                 <img src="img/btn_stop_0.png" class="bns" id = "stop_1"/>
@@ -180,9 +180,9 @@
         <div class="right">
             <p>2</p>
             <span></span>
-            <dl><img src="img/lamp_green_0.png"/>启 动</dl>
-            <dl><img src="img/lamp_green_0.png"/>反 馈</dl>
-            <dl><img src="img/lamp_green_0.png"/>故 障</dl>
+            <dl><img src="img/lamp_green_0.png" id="mul_lamp_201"/>启 动</dl>
+            <dl><img src="img/lamp_green_0.png" id="mul_lamp_202"/>反 馈</dl>
+            <dl><img src="img/lamp_green_0.png" id="mul_lamp_203"/>故 障</dl>
             <div class="start-end">
                 <img src="img/btn_start_0.png" class="bns" id = "start_2"/>
                 <img src="img/btn_stop_1.png" class="bns" id = "stop_2"/>
@@ -191,9 +191,9 @@
         <div class="right">
             <p>3</p>
             <span></span>
-            <dl><img src="img/lamp_green_0.png"/>启 动</dl>
-            <dl><img src="img/lamp_green_0.png"/>反 馈</dl>
-            <dl><img src="img/lamp_green_0.png"/>故 障</dl>
+            <dl><img src="img/lamp_green_0.png" id="mul_lamp_301"/>启 动</dl>
+            <dl><img src="img/lamp_green_0.png" id="mul_lamp_302"/>反 馈</dl>
+            <dl><img src="img/lamp_green_0.png" id="mul_lamp_303"/>故 障</dl>
             <div class="start-end">
                 <img src="img/btn_start_0.png" class="bns" id = "start_3"/>
                 <img src="img/btn_stop_0.png" class="bns" id = "stop_3"/>
@@ -208,10 +208,10 @@
             <div class="logo">
                 <img src="img/beida-logo.png"/>
             </div>
-            <dl><img src="img/lamp_green_0.png"/>运行</dl>
+            <dl><img src="img/lamp_green_0.png" id="bus_lamp_run"/>运行</dl>
             <p>手动方式</p>
-            <dl><img src="img/lamp_green_0.png"/>禁止</dl>
-            <dl><img src="img/lamp_green_0.png"/>允许</dl>
+            <dl><img src="img/lamp_green_0.png" id="bus_lamp_forb"/>禁止</dl>
+            <dl><img src="img/lamp_green_0.png" id="bus_lamp_allow"/>允许</dl>
         </div>
         <div class="right">
             <dl>
@@ -222,46 +222,46 @@
                 <div class="clearfix"></div>
             </dl>
             <p>
-                <span><img src="img/lamp_green_0.png"/></span>
-                <span><img src="img/lamp_green_0.png"/></span>
+                <span><img src="img/lamp_green_0.png" id="bus_lamp_a_101"/></span>
+                <span><img src="img/lamp_green_0.png" id="bus_lamp_b_101"/></span>
                 <span class="btnn">
-                    <img src="img/btn_zong_0.png" class="z_btn" id="z_11"/>
+                    <img src="img/btn_zong_0.png" class="bus_btn" id="bus_101"/>
                 </span>
                 <span>01</span>
             <div class="clearfix"></div>
             </p>
             <p>
-                <span><img src="img/lamp_green_0.png"/></span>
-                <span><img src="img/lamp_green_0.png"/></span>
+                <span><img src="img/lamp_green_0.png" id="bus_lamp_a_102"/></span>
+                <span><img src="img/lamp_green_0.png" id="bus_lamp_b_102"/></span>
                 <span class="btnn">
-                    <img src="img/btn_zong_0.png" class="z_btn" id="z_12"/>
+                    <img src="img/btn_zong_0.png" class="bus_btn" id="bus_102"/>
                 </span>
                 <span>02</span>
             <div class="clearfix"></div>
             </p>
             <p>
-                <span><img src="img/lamp_green_0.png"/></span>
-                <span><img src="img/lamp_green_0.png"/></span>
+                <span><img src="img/lamp_green_0.png" id="bus_lamp_a_103"/></span>
+                <span><img src="img/lamp_green_0.png" id="bus_lamp_b_103"/></span>
                 <span class="btnn">
-                    <img src="img/btn_zong_0.png" class="z_btn" id="z_13"/>
+                    <img src="img/btn_zong_0.png" class="bus_btn" id="bus_103"/>
                 </span>
                 <span>03</span>
             <div class="clearfix"></div>
             </p>
             <p>
-                <span><img src="img/lamp_green_0.png"/></span>
-                <span><img src="img/lamp_green_0.png"/></span>
+                <span><img src="img/lamp_green_0.png" id="bus_lamp_a_104"/></span>
+                <span><img src="img/lamp_green_0.png" id="bus_lamp_b_104"/></span>
                 <span class="btnn">
-                    <img src="img/btn_zong_0.png" class="z_btn" id="z_14"/>
+                    <img src="img/btn_zong_0.png" class="bus_btn" id="bus_104"/>
                 </span>
                 <span>04</span>
             <div class="clearfix"></div>
             </p>
             <p>
-                <span><img src="img/lamp_green_0.png"/></span>
-                <span><img src="img/lamp_green_0.png"/></span>
+                <span><img src="img/lamp_green_0.png" id="bus_lamp_a_105"/></span>
+                <span><img src="img/lamp_green_0.png" id="bus_lamp_b_105"/></span>
                 <span class="btnn">
-                    <img src="img/btn_zong_0.png" class="z_btn" id="z_15"/>
+                    <img src="img/btn_zong_0.png" class="bus_btn" id="bus_105"/>
                 </span>
                 <span>05</span>
             <div class="clearfix"></div>
@@ -276,45 +276,45 @@
                 <div class="clearfix"></div>
             </dl>
             <p>
-                <span><img src="img/lamp_green_0.png"/></span>
-                <span><img src="img/lamp_green_0.png"/></span>
+                <span><img src="img/lamp_green_0.png" id="bus_lamp_a_201"/></span>
+                <span><img src="img/lamp_green_0.png" id="bus_lamp_b_201"/></span>
                 <span class="btnn">
-                    <img src="img/btn_zong_0.png" class="z_btn" id="z_21"/>
+                    <img src="img/btn_zong_0.png" class="bus_btn" id="bus_201"/>
                 </span>
                 <span>01</span>
             <div class="clearfix"></div>
             </p>
             <p>
-                <span><img src="img/lamp_green_0.png"/></span>
-                <span><img src="img/lamp_green_0.png"/></span>
+                <span><img src="img/lamp_green_0.png" id="bus_lamp_a_202"/></span>
+                <span><img src="img/lamp_green_0.png" id="bus_lamp_b_202"/></span>
                 <span class="btnn">
-                    <img src="img/btn_zong_0.png" class="z_btn" id="z_22"/>
+                    <img src="img/btn_zong_0.png" class="bus_btn" id="bus_202"/>
                 </span>
                 <span>02</span>
             <div class="clearfix"></div>
             </p>
             <p>
-                <span><img src="img/lamp_green_0.png"/></span>
-                <span><img src="img/lamp_green_0.png"/></span>
+                <span><img src="img/lamp_green_0.png" id="bus_lamp_a_203"/></span>
+                <span><img src="img/lamp_green_0.png" id="bus_lamp_b_203"/></span>
                 <span class="btnn">
-                    <img src="img/btn_zong_0.png" class="z_btn" id="z_23"/>
+                    <img src="img/btn_zong_0.png" class="bus_btn" id="bus_203"/>
                 </span>
                 <span>03</span>
             <div class="clearfix"></div>
             </p>
             <p>
-                <span><img src="img/lamp_green_0.png"/></span>
-                <span><img src="img/lamp_green_0.png"/></span>
+                <span><img src="img/lamp_green_0.png" id="bus_lamp_a_204"/></span>
+                <span><img src="img/lamp_green_0.png" id="bus_lamp_b_204"/></span>
                 <span class="btnn">
-                    <img src="img/btn_zong_0.png" class="z_btn" id="z_24"/></span>
+                    <img src="img/btn_zong_0.png" class="bus_btn" id="bus_204"/></span>
                 <span>04</span>
             <div class="clearfix"></div>
             </p>
             <p>
-                <span><img src="img/lamp_green_0.png"/></span>
-                <span><img src="img/lamp_green_0.png"/></span>
+                <span><img src="img/lamp_green_0.png" id="bus_lamp_a_205"/></span>
+                <span><img src="img/lamp_green_0.png" id="bus_lamp_b_205"/></span>
                 <span class="btnn">
-                    <img src="img/btn_zong_0.png" class="z_btn" id="z_25"/>
+                    <img src="img/btn_zong_0.png" class="bus_btn" id="bus_205"/>
                 </span>
                 <span>05</span>
             <div class="clearfix"></div>

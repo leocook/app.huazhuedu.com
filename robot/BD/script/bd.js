@@ -14,74 +14,77 @@ $(document).ready(function () {
     });
     $(".bns").on({
         touchstart: function () {
-            var param = this.id.split('_')[0];
-            $(this).attr('src', 'img/btn_'+param + '_2.png')
+            var param = this.id.split('_');
+            $(this).attr('src', 'img/btn_'+param[0] + '_2.png')
         },
         touchend: function () {
-            var param = this.id.split('_')[0];
-            $(this).attr('src', 'img/btn_'+param + '_0.png')
-
+            var param = this.id.split('_');
+            var tp = param[0];
+            var mul_id = param[1];
+            $(this).attr('src', 'img/btn_'+ tp + '_0.png');
+            var id = 'mul_'+ mul_id;
+            var val = man.data[id];
+            switch(tp){
+                case 'start':
+                    if(val === 0){
+                        man.data[id] =3;
+                        man.turn_on_mul(mul_id,3);
+                    }
+                    break;
+                case 'stop':
+                    man.data[id] =0;
+                    console.log(mul_id);
+                    man.turn_off_mul(mul_id);
+                    break;
+                default:
+                    break;
+            }
         }
     });
-    $(".z_btn").on({
+    $(".bus_btn").on({
         touchstart: function () {
-            $(this).attr('src', 'img/btn_zong_2.png')
+            $(this).attr('src', 'img/btn_zong_2.png');
         },
         touchend: function () {
-            $(this).attr('src', 'img/btn_zong_0.png')
+            $(this).attr('src', 'img/btn_zong_0.png');
+            var id = this.id.split('_')[1];
+            var new_stat = (man.data['bus_'+id]+1)%2;
+            if(new_stat===1){
+                man.turn_on_bus(id);
+            }else{
+                man.turn_off_bus(id);
+            }
 
         }
+
     });
     $(".switch").on({
         touchstart: function () {
             var id = this.id;
-            var new_stat = (man.keys[id]+1)%2;
-            man.keys[id] = new_stat;
-            $(this).find('img').attr('src','img/key_'+new_stat+'.png');
-            var $ele_allow = $('#'+id+'_allow');
-            man.turn_lamp($ele_allow,new_stat);
-
+            var new_stat = (man.data[id]+1)%2;
+            man.data[id] = new_stat;
+            if(new_stat===1){
+                man.turn_on_key(id);
+            }else{
+                man.turn_off_key(id);
+            }
         }
     });
 });
 
-function Robot(){
+function Robot() {
     this.imgs = this._pre_load_img();
-    this.keys ={key_1:0,key_2:0,key_3:0};
-    this.stat={w:0,h:0};
-    this.lamp = {
-        lamp_11:0,lamp_12:0,lamp_13:0,lamp_14:0,lamp_15:0,
-        lamp_21:0,lamp_22:0,lamp_23:0,lamp_24:0,lamp_25:0,
-        lamp_31:0,lamp_32:0,lamp_33:1,lamp_34:0,lamp_35:0,
-        lamp_41:0,lamp_42:1,lamp_43:0,lamp_44:0,lamp_45:0
-    };
-    this.mul={
-        mul_11:0,mul_12:0,mul_13:0,
-        mul_21:0,mul_22:0,mul_23:0,
-        mul_31:0,mul_32:0,mul_33:0,
-        mul_41:0,mul_42:0,mul_43:0,
-        mul_51:0,mul_52:0,mul_53:0,
-        mul_61:0,mul_62:0,mul_63:0
-    };
-    this.scrn={
-        start_mod:{manual:1,auto:0,index:0},
-        self_check:{menu_show:0},
-        rec_check:{menu_show:0,menu_index:0,rec:[
-                {id:"000000",msg:"喷洒允许",stat:"设置"},
-                {id:"000001",msg:"自动禁止",stat:"设置"},
-                {id:"000002",msg:"手动禁止",stat:"设置"},
-                {id:"000003",msg:"光柵测温",stat:"屏蔽"},
-                {id:"000004",msg:"注册设备",stat:"操作"},
-                {id:"000005",msg:"注册示盘",stat:"操作"},
-                {id:"000006",msg:"消防广播",stat:"启动"}
-            ],his_rec_list:0}
-    };
-    this.timer={
-        scrn:[],lamp:[],normal:[],mul:[]
-    };
-    this.stat.w = this.get_width();
-    this.stat.h = this.get_height();
+    this.data = this.Default;
+    this.w = this.get_width();
+    this.h = this.get_height();
     this.ctx = this.get_ctx();
+    this.w_ratio = 0.75;
+    this.h_ratio = 0.92;
+    this.screen={
+        main:{x:0,y:0,w:this.w*this.w_ratio,h:this.h*this.h_ratio},
+        foot:{x:0,y:this.h*this.h_ratio,w:this.w,h:this.h*(1-this.h_ratio)},
+        right:{x:this.w*this.w_ratio,y:0,w:this.w*(1-this.w_ratio),h:this.h}
+    };
 }
 //主机初始状态，在每次初
 
@@ -111,82 +114,160 @@ Robot.prototype._pre_load_img= function(){
     return imgs;
 };
 
+Robot.prototype.draw_start_screen= function(){
+    var main_x =this.screen.main.x;
+    var main_y =this.screen.main.y;
+    var main_w =this.screen.main.w;
+    var main_h =this.screen.main.h;
+    var foot_x = this.screen.foot.x;
+    var foot_y = this.screen.foot.y;
+    var foot_w = this.screen.foot.w;
+    var foot_h = this.screen.foot.h;
+    var start_img = new Image();
+    start_img.src = 'img/start_img.jpg';
+    this.ctx.drawImage(start_img,0,0,this.screen.main.w,this.screen.main.h);
+    var grd = this.create_gradient(foot_x,foot_y,0,this.h);
+    this.ctx.fillStyle = grd;
+    this.ctx.fillRect(foot_x,foot_y,foot_w,foot_h);
+
+};
+
+Robot.prototype.create_gradient= function(x1,y1,x2,y2){
+    var grd=this.ctx.createLinearGradient(x1,y1,x2,y2);
+    grd.addColorStop(0,'#ffffff');
+    grd.addColorStop(1,"#000000");
+    return grd;
+
+};
+
 
 
 Robot.prototype.Default ={
-    'res':{ctx: null, shield_num: "",shield_code:""},
-    'stat':{
-        mul_start:0,mul_self_check:0,mul_1:0, mul_2:0, mul_3:0, mul_4:0, mul_5:0, mul_6:0, alarm:0,
-        self_check:0,pwd:0,set_start_mod:0,his_rec:0,shield:0,nc_flag:0,shield_cancel:0,reset:0
-    },
-    'lamp': {
-        lamp_11:0,lamp_12:0,lamp_13:0,lamp_14:0,lamp_15:0,
-        lamp_21:0,lamp_22:0,lamp_23:0,lamp_24:0,lamp_25:0,
-        lamp_31:0,lamp_32:0,lamp_33:1,lamp_34:0,lamp_35:0,
-        lamp_41:0,lamp_42:1,lamp_43:0,lamp_44:0,lamp_45:0
-    },
-    'mul':{
-        mul_11:0,mul_12:0,mul_13:0,
-        mul_21:0,mul_22:0,mul_23:0,
-        mul_31:0,mul_32:0,mul_33:0,
-        mul_41:0,mul_42:0,mul_43:0,
-        mul_51:0,mul_52:0,mul_53:0,
-        mul_61:0,mul_62:0,mul_63:0
-    },
-    'scrn':{
-        start_mod:{manual:1,auto:0,index:0},
-        self_check:{menu_show:0},
-        rec_check:{menu_show:0,menu_index:0,rec:[
-                {id:"000000",msg:"喷洒允许",stat:"设置"},
-                {id:"000001",msg:"自动禁止",stat:"设置"},
-                {id:"000002",msg:"手动禁止",stat:"设置"},
-                {id:"000003",msg:"光柵测温",stat:"屏蔽"},
-                {id:"000004",msg:"注册设备",stat:"操作"},
-                {id:"000005",msg:"注册示盘",stat:"操作"},
-                {id:"000006",msg:"消防广播",stat:"启动"}
-            ],his_rec_list:0}
-
-    }
+    key_1:0,key_2:0,key_3:0,
+    mul_1:0,mul_2:3,mul_3:7,
+    bus_101:0,bus_102:0,bus_103:0,bus_104:0,bus_105:0,
+    bus_201:0,bus_202:0,bus_203:0,bus_204:0,bus_205:1,
+    /*lamp_s : {
+        lamp_alarm:0,lamp_start:1,
+        lamp_101:0,lamp_104:0,lamp_201:0,lamp_204:0,
+        lamp_102:0,lamp_105:0,lamp_202:0,lamp_205:0,
+        lamp_103:1,lamp_106:0,lamp_203:0,lamp_206:1,
+        mul_lamp_run:0,mul_lamp_alarm:0,
+        bus_lamp_run:1,bus_lamp_forb:0,bus_lamp_allow:0
+    }*/
 };
 
 Robot.prototype.init=function(){
-    var ctx = this.ctx;
-    var old_style = ctx.fillStyle;
-    var old_font = ctx.font;
-    var old_stroke = ctx.strokeStyle;
-    var w=this.stat.w;
-    var h = this.stat.h;
-    ctx.font = "bold 20px 微软雅黑";
-    ctx.fillText("GST",0,25);
-    ctx.font = "bold 12px 微软雅黑";
-    var ver_str ="GST5000 V1.2";
-    var comp_str = "GULF SECURITY TECH CO., LTD.";
-    var l = ctx.measureText(ver_str).width;
-    ctx.fillText(ver_str,w-l-25,30);
-    ctx.font = "bold 12px 微软雅黑";
-    ctx.fillText(comp_str,0,45);
-    ctx.moveTo(0,33);
-    ctx.lineTo(w,33);
-    ctx.lineWidth=2;
-    ctx.strokeStyle="#fff";
-    ctx.stroke();
-    ctx.fillStyle=old_style;
-    ctx.font=old_font;
-    ctx.strokeStyle = old_stroke;
+    console.log('init');
+    this.data = this.Default;
+    var ds = this.data;
+    for(var k in ds ){
+        var tp = k.split('_')[0];
+        var v = ds[k];
+        switch(tp){
+            case 'key':
+                this.key_init(k,v);
+                break;
+            case 'bus':
+                this.bus_init(k,v);
+                break;
+            case 'mul':
+                this.mul_init(k,v);
+                break;
+            default:
+                break;
+        }
+    }
+    this.draw_start_screen();
+
 };
 
-
-Robot.prototype.to_default=function(){
-    this.clear_timer();
-    this.mul = this.Default.mul;
-    this.lamp = this.Default.lamp;
-    this.stat = this.Default.stat;
-    this.stat.w = this.get_width();
-    this.stat.h = this.get_height();
-    this.ctx = this.get_ctx();
-    this.init();
+Robot.prototype.turn_on_mul = function(id,val){
+    for(var i = 3;i>0;i--){
+        var lamp_id='#mul_lamp_'+id+'0'+(4-i);
+        if(val & 4>>(i-1)){
+            setTimeout(this.turn_on_lamp.bind(this),1000*(3-i),$(lamp_id));
+        }
+    }
 };
 
+Robot.prototype.turn_off_mul = function(id){
+    for(var i = 2;i>=0;i--){
+        var lamp_id = '#mul_lamp_'+id+'0'+(i+1);
+        console.log(lamp_id);
+        setTimeout(this.turn_off_lamp.bind(this),1000*(2-i),$(lamp_id));
+    }
+};
+
+Robot.prototype.mul_init = function(k,v){
+    var id = k.split('_')[1];
+    this.turn_on_mul(id,v);
+};
+
+Robot.prototype.bus_init = function(k,v){
+    if(v===1){
+        var param = k.split('_');
+        var id = param[1];
+        this.turn_on_lamp($('#bus_lamp_a_'+id));
+        this.turn_on_lamp($('#bus_lamp_b_'+id));
+    }
+
+};
+
+Robot.prototype.turn_on_bus=function(id){
+    $.when(
+        this.turn_lamp_delay($('#bus_lamp_a_'+id),1000,1),
+        this.turn_lamp_delay($('#bus_lamp_b_'+id),2000,1)
+    ).then(
+        this.change_bus_val('bus_'+id,1)
+    );
+};
+
+Robot.prototype.turn_off_bus=function(id){
+    $.when(
+        this.turn_lamp_delay($('#bus_lamp_b_'+id),1000,0),
+        this.turn_lamp_delay($('#bus_lamp_a_'+id),2000,0)
+    ).then(
+        this.change_bus_val('bus_'+id,0)
+    );
+};
+
+Robot.prototype.turn_lamp_delay = function($ele,delay,val){
+        var dfd = $.Deferred();
+        var that = this;
+        setTimeout(function(){
+            that.turn_lamp($ele,val);
+        },delay);
+        return dfd.promise();
+};
+
+Robot.prototype.change_bus_val=function(id,val){
+    this.data[id] = val;
+};
+
+Robot.prototype.key_init=function(k,v){
+   var $ele_allow = $('#'+k+'_allow');
+   var $ele_forb = $('#'+k+'_forb');
+   if(v===1){
+       this.turn_on_lamp($ele_allow);
+       this.turn_off_lamp($ele_forb);
+   }else{
+       this.turn_on_lamp($ele_forb);
+       this.turn_off_lamp($ele_allow);
+   }
+};
+
+Robot.prototype.lamps_init=function(lamps){
+    var k;
+    for( k in lamps){
+        var $ele = $('#'+k);
+        if(lamps[k]===1){
+            this.turn_on_lamp($ele);
+        }else{
+            this.turn_off_lamp($ele);
+        }
+    }
+};
 
 Robot.prototype.clear_timer = function(){
     for(var i in this.timer){
@@ -194,10 +275,36 @@ Robot.prototype.clear_timer = function(){
             clearTimeout(this.timer[i][j]);
         }
     }
+};
 
+Robot.prototype.turn_on_key = function(switch_id){
+    this.turn_key(switch_id,1);
+};
+Robot.prototype.turn_off_key = function(switch_id){
+    this.turn_key(switch_id,0);
+};
+
+Robot.prototype.turn_key = function(switch_id,val){
+    $ele = $('#'+switch_id);
+    $ele.find('img').attr('src','img/key_'+val+'.png');
+    var $ele_allow = $('#'+switch_id+'_allow');
+    var $ele_forb = $('#'+switch_id+'_forb');
+    if(val === 1){
+        this.turn_on_lamp($ele_allow);
+        this.turn_off_lamp($ele_forb);
+    }else{
+        this.turn_on_lamp($ele_forb);
+        this.turn_off_lamp($ele_allow);
+    }
 };
 
 
+Robot.prototype.turn_on_lamp = function($ele){
+    this.turn_lamp($ele,1);
+};
+Robot.prototype.turn_off_lamp = function($ele){
+    this.turn_lamp($ele,0);
+};
 Robot.prototype.turn_lamp = function($ele,stat){
     var old_path = $ele.attr('src');
     var new_path = old_path.slice(0,-5)+stat+'.png';
@@ -211,7 +318,7 @@ Robot.prototype.get_height = function(){
     return $(".screen").height();
 };
 Robot.prototype.get_ctx = function(){
-    $(".screen").html("<canvas id='can_top' width='" + this.stat.w + "' height='" + this.stat.h + "'/>");
+    $(".screen").html("<canvas id='can_top' width='" + this.w + "' height='" + this.h + "'/>");
     var c = document.getElementById("can_top");
     var ctx = c.getContext("2d");
     ctx.fillStyle = "#fff";
