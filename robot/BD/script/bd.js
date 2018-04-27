@@ -180,7 +180,7 @@ Robot.prototype.Default ={
         lamp_102:0,lamp_105:0,lamp_202:0,lamp_205:0,
         lamp_103:1,lamp_106:0,lamp_203:0,lamp_206:1,
         mul_lamp_run:0,mul_lamp_alarm:0,
-        bus_lamp_run:1,bus_lamp_forb:0,bus_lamp_allow:0
+        bus_lamp_run:1,bus_lamp_forb:0,bus_lamp_allow:1
     }
 };
 

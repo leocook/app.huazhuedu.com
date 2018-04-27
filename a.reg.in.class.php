@@ -65,12 +65,15 @@ switch ($z){
         if(!$z_start or !$z_end or (($z_end-$z_start)<=0)){
             echo json_encode(["msg" => "选择正确的开始和结束日期", "status" => "no"]);
             exit(0);
+        }else{
+            $room_start = date('Y-m-d H-i-s',$z_start);
+            $room_end = date('Y-m-d H-i-s',$z_end);
         }
         break;
     default:
         $d= '0';
-        $z_start = date('Y-m-d H-i-s');
-        $z_end = date('Y-m-d H-i-s');
+        $room_start = date('Y-m-d H-i-s');
+        $room_end = date('Y-m-d H-i-s');
         break;
 }
 $info= $cust->get_custom_info($uid);
@@ -84,7 +87,7 @@ if($cust->is_reg_full($cls_id)){
 }
 
 $in_ip = $_SERVER['REMOTE_ADDR'];
-if($cust->reg_in_class($uid,$cls_id,$c,$z,$d,$in_mb,$in_ip,$info['id_num'],$info['nam'],$c_name)){
+if($cust->reg_in_class($uid,$cls_id,$c,$z,$d,$in_mb,$in_ip,$info['id_num'],$info['nam'],$c_name,$room_start,$room_end)){
     echo json_encode(["msg" => "报名成功", "status" => "yes",'errCode'=>0]);
     exit(0);
 }else{

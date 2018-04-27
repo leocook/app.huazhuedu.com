@@ -37,11 +37,23 @@ if(!$is_exist){
         exit();
 }else{
     $data=[];
+    $eat=['否','是'];
+    $room=['','单人间','双人间'];
     $info = $c->get_custom_info($id);
     $data[]=['des'=>"身份证号",'val'=>$info['id_num']];
     $data[]=['des'=>"手机号码",'val'=>$info['mb']];
     $data[]=['des'=>"固定电话",'val'=>$info['tel']];
-    $data[]=['des'=>"单位名称",'val'=>$info['end']];
+    $data[]=['des'=>"单位名称",'val'=>$info['company']];
+    $data[]=['des'=>"备注信息",'val'=>$info['des']];
+    $data[]=['des'=>"招生老师",'val'=>$info['name']];
+    $data[]=['des'=>"是否管饭",'val'=>$eat[$info['need_eat']]];
+    $data[]=['des'=>"是否住宿",'val'=>$eat[$info['need_room']]];
+    if($info['need_room']==='1'){
+        $data[]=['des'=>"住宿类型",'val'=>$room[$info['need_room']]];
+        $data[]=['des'=>"开始时间",'val'=>$info['room_start']];
+        $data[]=['des'=>"开始时间",'val'=>$info['room_end']];
+    }
+
     echo json_encode(['status'=>'yes','data'=>$data]);
     exit();
 }

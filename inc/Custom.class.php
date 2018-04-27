@@ -65,8 +65,8 @@ class Custom
         return $r['c'];
     }
 
-    public function reg_in_class($uid,$cid,$need_eat,$need_room,$room_type,$in_man,$in_ip,$id_num,$stu_nam,$c_nam){
-        $sql = "insert into hz_class_info (student_id,class_id,need_eat,need_room,room_type,in_man,in_ip,id_num,student_name,class_name) values (:uid,:cid,:need_eat,:need_room,:room_type,:in_man,:in_ip,:id_num,:stu_nam,:c_nam)";
+    public function reg_in_class($uid,$cid,$need_eat,$need_room,$room_type,$in_man,$in_ip,$id_num,$stu_nam,$c_nam,$room_start,$room_end){
+        $sql = "insert into hz_class_info (student_id,class_id,need_eat,need_room,room_type,in_man,in_ip,id_num,student_name,class_name,room_start,room_end) values (:uid,:cid,:need_eat,:need_room,:room_type,:in_man,:in_ip,:id_num,:stu_nam,:c_nam,:room_start,:room_end)";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute([
             ':uid'=>$uid,
@@ -79,6 +79,8 @@ class Custom
             ':id_num'=>$id_num,
             ':stu_nam'=>$stu_nam,
             ':c_nam'=>$c_nam,
+            ':room_start'=>$room_start,
+            ':room_end'=>$room_end,
         ]);
         if($stmt->rowCount()>0){
             return true;
@@ -137,7 +139,7 @@ class Custom
             ':m_ip'=>$m_ip,
             ':m_man'=>$m_man,
             ':m_time'=>date('Y-m-d H-i-s'),
-            ':cid'=>$cid
+            ':cid'=>$cid,
         ]);
         if($stmt->rowCount()>0){
             return true;
@@ -200,7 +202,7 @@ class Custom
     }
 
     public function get_custom_info($id){
-        $sql = "select id,nam,id_num,mb,tel,company,des from hz_custom where id = $id";
+        $sql = "select a.id,a.nam,a.id_num,a.mb,a.tel,a.company,a.des, b.name, c.need_room,c.need_eat,c.room_type,c.room_start,c.room_end from hz_custom as a ,saler as b ,hz_class_info as c where a.id = $id and a.in_man = b.mobile and a.id = c.student_id ";
         $stmt = $this->conn->query($sql);
         if($stmt){
             return $stmt->fetch(\PDO::FETCH_ASSOC);

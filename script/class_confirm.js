@@ -44,12 +44,12 @@ $(document).ready(function(){
 
 var get_info=function(sid,pre){
     var d={id_:sid};
-    $.post('a.class.conform.php',d).done(function(data){
+    $.post('a.class.confirm.php',d).done(function(data){
         nd = JSON.parse(data);
         if(nd.status === 'no'){
             alert(nd.msg);
             if(nd.errCode === 1){
-                sessionStorage.url = 'class_conform.php';
+                sessionStorage.url = 'class_confirm.php';
                 window.location.href = 'login_page.php';
             }
         }else{
